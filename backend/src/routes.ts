@@ -12,6 +12,10 @@ const upload = multer(multerConfig);
 const itemsController = new ItemsController();
 const locationsController = new LocationsController();
 
+routes.get('/', (req, res) => {
+  res.json("Hello wolrd!!");
+})
+ 
 routes.get('/items', itemsController.index);
 
 routes.get('/locations/:id', locationsController.show);

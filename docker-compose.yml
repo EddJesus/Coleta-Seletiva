@@ -6,6 +6,8 @@ services:
       context: ./backend/
       dockerfile: dockerfile
     command: "npm run dev"
+    volumes:
+      - ./backend/:/usr/app/
     ports:
       - "3000:3000"
     container_name: backend_typescript
@@ -17,6 +19,8 @@ services:
       context: ./frontend/
       dockerfile: dockerfile
     command: "npm start"
+    volumes:
+      - ./frontend/:/usr/app/
     ports:
       - "3001:3001"
     container_name: frontend_typescript
@@ -27,4 +31,4 @@ networks:
   typescript:
     external: true
 
-
+ 
