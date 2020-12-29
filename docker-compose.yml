@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  backend:
+    build: 
+      context: ./backend/
+      dockerfile: dockerfile
+    command: "npm run dev"
+    ports:
+      - "3000:3000"
+    container_name: backend_typescript
+    networks:
+      - "typescript"
+
+  frontend:
+    build: 
+      context: ./frontend/
+      dockerfile: dockerfile
+    command: "npm start"
+    ports:
+      - "3001:3001"
+    container_name: frontend_typescript
+    networks:
+      - "typescript"
+
+networks:
+  typescript:
+    external: true
+
+
