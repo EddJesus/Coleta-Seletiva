@@ -1,8 +1,17 @@
-import React, {  Fragment  } from 'react';
+import React, {  Fragment, useState  } from 'react';
 import Header from './components/Header';
 import Menu from './components/Menu';
 
 function App() {
+
+  const [counter, setCounter] = useState(0);
+
+  const incrementar:any = () =>{
+    setCounter(counter + 1);
+
+    console.log(counter);
+  }
+
   return (
     //usando o Fragment pq é obrigatório
     <Fragment>
@@ -15,7 +24,12 @@ function App() {
           <li>Menu 2</li>
           <li>Menu 3</li>
         </ul>
+
+        <p>Contagem: {counter}</p>
+        <button onClick={incrementar}>Adicionar</button>
       </Menu>
+
+      
       
     </Fragment>
   );
