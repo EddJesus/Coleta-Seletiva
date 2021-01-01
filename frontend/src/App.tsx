@@ -1,7 +1,7 @@
-import React, {  Fragment, useState  } from 'react';
+import React, {  Fragment  } from 'react';
 import "./App.css";
 
-import Home from "./pages/Home/index";
+import Routes from './routes'
 
 function App() {
 
@@ -9,11 +9,11 @@ function App() {
     //usando o Fragment pq é obrigatório
     <Fragment>
 
-      <Home></Home>
-
+      <Routes/>
       
     </Fragment>
   );
 }
 
 export default App;
+
